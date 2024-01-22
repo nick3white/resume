@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        (function () {
+            function setTheme(theme) {
+                document.documentElement.className = theme
+                localStorage.setItem('nw-theme', theme);
+            }
+
+            var theme = localStorage.getItem('nw-theme');
+
+            if (theme) {
+                setTheme(theme);
+            } else {
+                setTheme('dark')
+            }
+        })();
+
+        window.addEventListener('load', function () {
+
+            if (localStorage.getItem('theme')) {
+                const btnId = 'theme-btn-' + localStorage.getItem('nw-theme')
+                console.log(btnId)
+                let activeButton = document.getElementById(btnId)
+                activeButton.classList.add("visible");
+                activeButton.classList.remove('invisible');
+
+            } else {
+                document.documentElement.className = 'dark'
+                localStorage.setItem('nw-theme', 'light');
+                const themeButtonContainer = document.getElementById('theme-button-container')
+                const themeButtons = themeButtonContainer.querySelectorAll('#theme-button-container > button');
+
+                for (let themeButton of themeButtons) {
+                    themeButton.classList.add('visible');
+                    themeButton.classList.remove('invisible');
+                }
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+                    const themes = ['light', 'dark', 'synth'];
+
+                    const themeButtons = document.querySelectorAll('.theme-btn')
+                    themeButtons.forEach(btn => {
+                        const theme = btn.innerText
+                        btn.addEventListener('click', function () {
+                            document.body.className = '';
+                            document.body.classList.add(theme);
+                            
+                            themeButtons.forEach(b => b.classList.remove('visible'))
+                            btn.classList.add('visible')
+                        })
+                    })
+                    })
+    </script>
+
+
+    <title>Nick White, Front End Dev</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="/favicon.svg" rel="icon" type="image/svg+xml">
+    <meta name="description" content="A resume site">
+
+    <link rel="stylesheet" href="/alt.css">
+</head>
+
+<body lang="en">
+
+    <div id="top"></div>
+
+    <header>
+        <div class="picto">
+            <img
+                srcset="/img/me200.webp 200w, /build/me400.webp 400w, /img/me600.webp 600w, /img/me800.webp 800w, /img/me1200.webp 1200w"
+                width="1200" height="803" decoding="async" loading="lazy"></div>
+        <div class="main">
+
+            <div id="theme-button-container">
+                <button id="theme-btn-light" class="theme-btn invisible">light</button>
+                <button id="theme-btn-dark" class="theme-btn visible">dark</button>
+                <button id="theme-btn-synth" class="theme-btn invisible">synth</button>
+            </div>
+
+            <h1>Nick White</h1>
+            <address>
+                <p>312.292.8607</p>
+                <p>nick33white at gmail</p>
+                <p>Chicago</p><a href="#contact">Contact</a>
+            </address>
+        </div>
+    </header>
+
+
+
+    <main>
+        <aside>
+            <section class="socials">
+                <h3>Socials</h3>
+                <ul>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/nick-white-511000288/">linkedin</a></li>
+                    <li><a target="_blank" href="https://medium.com/@nick33white">medium</a></li>
+                    <li><a target="_blank" href="https://github.com/nick3white/">github</a></li>
+                    <li><a target="_blank" href="https://codepen.io/nick3white">codepen</a></li>
+                </ul>
+            </section>
+            <section class="skill-lists">
+                <h3>Skills</h3>
+                <ul>
+                    <li class="skill-sublist">
+                        <dl>
+                            <dt>JavaScript</dt>
+                            <dd>
+                    <li>Svelte</li>
+                    <li>React</li>
+                    <li>Node</li>
+                    <li>(and many more)</li>
+                    </dd>
+                    </dl>
+                    </li>
+                    <li class="skill-sublist">
+                        <dl>
+                            <dt>Data &amp; Scripting</dt>
+                            <dd>
+                    <li>Python</li>
+                    <li>Pandas</li>
+                    <li>Bash</li>
+                    </dd>
+                    </dl>
+                    </li>
+                    <li class="skill-sublist">
+                        <dl>
+                            <dt>Dev Ops / Sysadmin</dt>
+                            <dd>
+                    <li>Linux</li>
+                    <li>Apache / LAMP</li>
+                    <li>IaC, IaaS, BaaS</li>
+                    <li>CI/CD</li>
+                    </dd>
+                    </dl>
+                    </li>
+                    <li class="skill-sublist">
+                        <dl>
+                            <dt>Database</dt>
+                            <dd>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                    <li>Prisma</li>
+                    <li>Redis</li>
+                    </dd>
+                    </dl>
+                    </li>
+                </ul>
+            </section>
+            <section class="samples">
+                <h3>Recent Projects</h3>
+                <dl><a target="_blank" href="https://digital.newberry.org/collection-stories/halloween"
+                        class="sample-link">
+                        <dt>Halloween</dt>
+                        <dd><img srcset="/img/halloween200.webp 200w, /img/halloween400.webp 400w, /img/halloween600.webp 600w, /img/halloween800.webp 800w, /img/halloween1200.webp 1200w"
+                                width="1200" height="837" decoding="async" loading="lazy"></dd>
+                    </a><a target="_blank" href="https://digital.newberry.org/rb4r" class="sample-link">
+                        <dt>Race B4 Race</dt>
+                        <dd><img srcset="/img/rb4r200.webp 200w, /img/rb4r400.webp 400w, /img/rb4r600.webp 600w, /img/rb4r800.webp 800w"
+                                width="800" height="660" decoding="async" loading="lazy"></dd>
+                    </a><a target="_blank" href="https://mappingmovement.newberry.org/" class="sample-link">
+                        <dt>Mapping Movement</dt>
+                        <dd><img srcset="/img/mapmov200.webp 200w, /img/mapmov400.webp 400w, /img/mapmov600.webp 600w, /img/mapmov800.webp 800w, /img/mapmov1200.webp 1200w"
+                                width="1200" height="841" decoding="async" loading="lazy"></dd>
+                    </a></dl>
+            </section>
+        </aside>
+        <article id="resume">
+            <section>
+                <h2>
+                    <span class="normo">Developer</span><span class="hido">Front End + Data Magic</span></h2>
+                <li>Extensive experience executing designs using JavaScript, React JS, Svelte JS, and more, emphasizing
+                    usability, appeal, and accessibility</li>
+                <li>Extensive experience developing utilities and scripts for use in large scale data projects, for both
+                    data manipulation and data analysis</li>
+                <li>Jack-of-all-trades tech lead experience: management and maintenance of all the things: Redis,
+                    PostgreSQL, MySQL, LAMP stack, CI/CD &amp; serverless, IaaS, BaaS, IaC, etc</li>
+                <li>Experience coaching junior developers and assisting with self-directed education &amp; training</li>
+            </section>
+            <section>
+                <h2>Work History</h2>
+                <a href="/nick-white-resume-231217.pdf" target="_blank" class="pdf-link">
+                    Now available: download my resume in stunning <em>&nbsp;Portable Document Format</em>
+                </a>
+                <h3>Newberry Library</h3><li>Built and rebuilt 10+ projects as the principal developer, focusing on
+                    replicating the wonderful aspects of traditional library and learning experiences, while still
+                    providing novel, innovative experiences.</li>
+                <li>Provided the back end support, through scripting (python &amp; bash) and heavy lifting, for a major
+                    DAMS upgrade project, gathering, transforming, manipulating, and massaging millions of records
+                    coming from various decaying sources, with an emphasis on reusability - the next DAMS upgrade will
+                    be much easier.</li>
+                <li>Maintained the web infrastructure for decades of the Newberry's Digital Initiatives, from server
+                    migrations, database administration, and branding overhauls to old projects, to cron jobs to update
+                    my Slack status based on time of day. In the last year, I've been transforming the library's digital
+                    infrastructure to a cloud-first model; I believe that approach outsources the library's most
+                    problematic points of weakness.</li>
+            </section>
+            <section>
+                <h3>Chicago Public Library</h3>
+                <li>Built bespoke tools for reference librarians to enable them to search and discover their passion
+                    projects in order to share the resources, and their passions, with patrons</li>
+                <li>Managed large scale digitization projects from conception to launch, including the grant writing,
+                    staffing, and planning in between</li>
+                <li>Created web portals for digital content, from digital collections, to born-digital gifts to the
+                    Special Collections, with an emphasis on building rock solid tools that would survive without
+                    maintenance, using Ruby and Jekyll SSG tools</li>
+            </section>
+            <section>
+                <h3>Freelance Web Development &amp; Consulting</h3>
+                <li>Used PHP, CSS, JavaScript (Angular 1.0, jQuery) to develop new websites and rebuilt older ones for
+                    various clients, or updated existing ones</li>
+                <li>Consulted with clients from my Codifyd days with whom I had established ongoing relationships;
+                    specialized in data remediation, ETL, and how to train data analysts</li>
+            </section>
+            <section>
+                <h3>Codifyd</h3>
+                <li>Handled data remediation, transformation, and restructuring for large scale data cleanig and ETL
+                    projects, delivering millions of cleaned records yearly</li>
+                <li>Consulted nationally and internationally on data science, data architecture, and how to both
+                    communicate data, and to listen to it</li>
+                <li>Worked with clients with millions of products and thousands of employees, as well as with companies
+                    small scale companies (which were usually more fun!)</li>
+            </section>
+            <section>
+                <h2>Publications (&amp;c)</h2>
+                <dl>
+                    <dt>Movement and Place in Mapping Movement</dt>
+                    <dd><em><a target="_blank"
+                                href="https://medium.com/@nick33white/design-theory-movement-and-place-in-mapping-movement-375110749b73"
+                                class="art-link">Article</a>.</em>2023. In the development of the Mapping
+                        Movement rebuild, I used place and movement to recreate something of the book-experience, while
+                        also evoking the spirit of the Mapping Movement project.</dd>
+
+
+                    <dt>Z-Index: The Puzzle Stacked On an Enigma Stacked Under a Riddle</dt>
+                    <dd><em><a target="_blank"
+                                href="https://medium.com/@nick33white/az-index-the-puzzle-stacked-on-an-enigma-stacked-under-a-riddle-7be98499f779"
+                                class="art-link">Article</a>.</em>2023. A spinoff of the Mapping Movement article, oriented toward developers; I learned a lot about z-index in that project, a notoriously challenging topic.</dd>
+
+
+                    <dt>Marble Runs, Clown Cars, and Metadata Schemas</dt>
+                    <dd><em>Conference Presentation, Digital Library Federation 2023 Forum.</em>2023. Described the flow
+                        of data from legacy systems to new ones, using a 'value first' approach (marble run) in a
+                        multiply-redundant data environment, the problem with validating values (clown car), and the
+                        improvements available using an 'attribute first' approach</dd>
+
+
+                    <dt>The Collective Wisdom Handbook</dt>
+                    <dd><em>Book.</em>2021. Covers the history, practice, best practices, and technology used
+                        crowdsourcing transcriptions in cultural heritage institutions. Written by me and 20 of my
+                        closest friends.</dd>
+
+
+                    <dt>IIIF and the Problem with CSS Image Cropping</dt>
+                    <dd><em><a target="_blank"
+                                href="https://medium.com/@digitalnewberry/iiif-and-the-problem-with-css-image-cropping-651cfeb5593b"
+                                class="art-link">Article</a>.</em>2019. Explains the challenges of CSS
+                        image handling and how to use IIIF to solve them. Somewhat deprecated with advancements in CSS
+                        since then, but it was my first tech-centered essay, so I have fond memories.</dd>
+
+
+                    <dt>FOSS: What and Why</dt>
+                    <dd><em>Job Talk.</em>2020. Overview of what FOSS means, what open source is, and their value, both
+                        ethically and practically</dd>
+
+
+                    <dt>Digitial Initiatives Career Talk</dt>
+                    <dd><em>Job Talk.</em>2021. Presented to a number of college classes, a summary of what we do and
+                        how we do it.</dd>
+
+
+                    <dt>From Socrates to Stack Exchange</dt>
+                    <dd><em>Job Talk.</em>2022. Covering the general applications and use cases of various languages,
+                        covering Bash (and Linux generally), Python, and JavaScript</dd>
+                    <dt>The Time Machine</dt>
+                    <dd><em>Conference Presentation, Code4Lib Chicago.</em>2019. Covers technology used for the Time
+                        Machine project, from crowdsourcing transcription, to Gatsby &amp; the importance of SSG to
+                        libraries</dd>
+
+                </dl>
+            </section>
+            <section>
+                <h2>Interests</h2>
+                <h3>Technology</h3>
+                <li><b>Qwik</b> JS has got me thinking about how (and when!) I deliver JS to the client; while it may
+                    not make a difference to efficiency (depending on the bundle), but it helps to keep from getting too
+                    abstract in my thinking.</li>
+                <li>I've been making websites since they were just HTML, so playing with <b>HTMX</b> reminds me of that
+                    era. JavaScript makes it feel like everything is imaginary except JS; HTMX reminds me of the before
+                    times.</li>
+                <li>Playing around with <b>Lit</b> - and working with web components generally - feels like you're
+                    Gambit from the X-Men. I love their versatility - though, to be honest, I haven't found a great use
+                    case in my work.</li>
+            </section>
+            <section>
+                <h3>Non-Technology</h3>
+                <li>I'm always excited to have conversations about <b>music</b>. I have pretty wide tastes, from 50s
+                    jazz, 60s experimental music, 70s dub, 80s hardcore, 90s indie, 00s IDM, to Simpsonwave in the
+                    2010s, there's always something interesting going on.</li>
+                <li><b>Arts &amp; Literature</b> may seem like they're far afield, but they inform the foundations of my
+                    approaches. Non-representational Theory (Gilles Deleuze, Guy Debord) and phenomenology (Maurice
+                    Blanchot, Alphonso Lingis) are a couple of specific areas of interest.</li>
+            </section>
+        </article>
+    </main>
+    <section
+        class="contact-section">
+        <article id="contact">
+            <form action="https://formsubmit.co/4c5fb5bc125c9ac8405bf2fbe9a6a4a2" method="POST">
+                <div class="left"><input name="name" placeholder="Enter name..." required="" type="name"
+                        class="name"><input name="email" placeholder="Enter email..." required="" type="email"
+                        class="email"></div>
+                <div class="right"><textarea cols="30" name="message" placeholder="Add a message..." required=""
+                        rows="10" class="message"></textarea><button class="submit">Say hi!</button></div>
+            </form>
+        </article>
+        <a href="#top"><i></i>
+            <p>back to top</p>
+        </a>
+
+    </section>
+</body>
+
+</html>
