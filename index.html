@@ -42,20 +42,20 @@
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-                    const themes = ['light', 'dark', 'synth'];
+            const themes = ['light', 'dark', 'synth'];
 
-                    const themeButtons = document.querySelectorAll('.theme-btn')
-                    themeButtons.forEach(btn => {
-                        const theme = btn.innerText
-                        btn.addEventListener('click', function () {
-                            document.body.className = '';
-                            document.body.classList.add(theme);
-                            
-                            themeButtons.forEach(b => b.classList.remove('visible'))
-                            btn.classList.add('visible')
-                        })
-                    })
-                    })
+            const themeButtons = document.querySelectorAll('.theme-btn')
+            themeButtons.forEach(btn => {
+                const theme = btn.innerText
+                btn.addEventListener('click', function () {
+                    document.body.className = '';
+                    document.body.classList.add(theme);
+
+                    themeButtons.forEach(b => b.classList.remove('visible'))
+                    btn.classList.add('visible')
+                })
+            })
+        })
     </script>
 
 
@@ -63,8 +63,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="/resume/favicon.svg" rel="icon" type="image/svg+xml">
     <meta name="description" content="A resume site">
-
-    <link rel="stylesheet" href="/resume/alt.css">
+    <link rel="stylesheet" href="/resume/css.css">
 </head>
 
 <body lang="en">
@@ -73,8 +72,7 @@
 
     <header>
         <div class="picto">
-            <img
-                srcset="/resume/img/me200.webp 200w, /resume/img/me400.webp 400w, /resume/img/me600.webp 600w, /resume/img/me800.webp 800w, /resume/img/me1200.webp 1200w"
+            <img srcset="/resume/img/me200.webp 200w, /resume/img/me400.webp 400w, /resume/img/me600.webp 600w, /resume/img/me800.webp 800w, /resume/img/me1200.webp 1200w"
                 width="1200" height="803" decoding="async" loading="lazy"></div>
         <div class="main">
 
@@ -92,9 +90,6 @@
             </address>
         </div>
     </header>
-
-
-
     <main>
         <aside>
             <section class="socials">
@@ -113,44 +108,52 @@
                         <dl>
                             <dt>JavaScript</dt>
                             <dd>
-                    <li>Svelte</li>
-                    <li>React</li>
-                    <li>Node</li>
-                    <li>(and many more)</li>
-                    </dd>
-                    </dl>
+                                <ul>
+                                    <li>Svelte</li>
+                                    <li>React</li>
+                                    <li>Node</li>
+                                    <li>(and many more)</li>
+                                </ul>
+                            </dd>
+                        </dl>
                     </li>
                     <li class="skill-sublist">
                         <dl>
                             <dt>Data &amp; Scripting</dt>
                             <dd>
-                    <li>Python</li>
-                    <li>Pandas</li>
-                    <li>Bash</li>
-                    </dd>
-                    </dl>
+                                <ul>
+                                    <li>Python</li>
+                                    <li>Pandas</li>
+                                    <li>Bash</li>
+                                </ul>
+                            </dd>
+                        </dl>
                     </li>
                     <li class="skill-sublist">
                         <dl>
                             <dt>Dev Ops / Sysadmin</dt>
                             <dd>
-                    <li>Linux</li>
-                    <li>Apache / LAMP</li>
-                    <li>IaC, IaaS, BaaS</li>
-                    <li>CI/CD</li>
-                    </dd>
-                    </dl>
+                                <ul>
+                                    <li>Linux</li>
+                                    <li>Apache / LAMP</li>
+                                    <li>IaC, IaaS, BaaS</li>
+                                    <li>CI/CD</li>
+                                </ul>
+                            </dd>
+                        </dl>
                     </li>
                     <li class="skill-sublist">
                         <dl>
                             <dt>Database</dt>
                             <dd>
-                    <li>MySQL</li>
-                    <li>PostgreSQL</li>
-                    <li>Prisma</li>
-                    <li>Redis</li>
-                    </dd>
-                    </dl>
+                                <ul>
+                                    <li>MySQL</li>
+                                    <li>PostgreSQL</li>
+                                    <li>Prisma</li>
+                                    <li>Redis</li>
+                                </ul>
+                            </dd>
+                        </dl>
                     </li>
                 </ul>
             </section>
@@ -175,7 +178,8 @@
         <article id="resume">
             <section>
                 <h2>
-                    <span class="normo">Developer</span><span class="hido">Front End + Data Magic</span></h2>
+                    <span class="normo">Developer</span><span class="hido">Front End + Data Magic</span>
+                </h2>
                 <li>Extensive experience executing designs using JavaScript, React JS, Svelte JS, and more, emphasizing
                     usability, appeal, and accessibility</li>
                 <li>Extensive experience developing utilities and scripts for use in large scale data projects, for both
@@ -189,7 +193,8 @@
                 <a href="/resume/nick-white-resume-231217.pdf" target="_blank" class="pdf-link">
                     Now available: download my resume in stunning <em>&nbsp;Portable Document Format</em>
                 </a>
-                <h3>Newberry Library</h3><li>Built and rebuilt 10+ projects as the principal developer, focusing on
+                <h3>Newberry Library</h3>
+                <li>Built and rebuilt 10+ projects as the principal developer, focusing on
                     replicating the wonderful aspects of traditional library and learning experiences, while still
                     providing novel, innovative experiences.</li>
                 <li>Provided the back end support, through scripting (python &amp; bash) and heavy lifting, for a major
@@ -238,12 +243,12 @@
                         Movement rebuild, I used place and movement to recreate something of the book-experience, while
                         also evoking the spirit of the Mapping Movement project.</dd>
 
-
                     <dt>Z-Index: The Puzzle Stacked On an Enigma Stacked Under a Riddle</dt>
                     <dd><em><a target="_blank"
                                 href="https://medium.com/@nick33white/az-index-the-puzzle-stacked-on-an-enigma-stacked-under-a-riddle-7be98499f779"
-                                class="art-link">Article</a>.</em>2023. A spinoff of the Mapping Movement article, oriented toward developers; I learned a lot about z-index in that project, a notoriously challenging topic.</dd>
-
+                                class="art-link">Article</a>.</em>2023. A spinoff of the Mapping Movement article,
+                        oriented toward developers; I learned a lot about z-index in that project, a notoriously
+                        challenging topic.</dd>
 
                     <dt>Marble Runs, Clown Cars, and Metadata Schemas</dt>
                     <dd><em>Conference Presentation, Digital Library Federation 2023 Forum.</em>2023. Described the flow
@@ -251,12 +256,10 @@
                         multiply-redundant data environment, the problem with validating values (clown car), and the
                         improvements available using an 'attribute first' approach</dd>
 
-
                     <dt>The Collective Wisdom Handbook</dt>
                     <dd><em>Book.</em>2021. Covers the history, practice, best practices, and technology used
                         crowdsourcing transcriptions in cultural heritage institutions. Written by me and 20 of my
                         closest friends.</dd>
-
 
                     <dt>IIIF and the Problem with CSS Image Cropping</dt>
                     <dd><em><a target="_blank"
@@ -265,16 +268,13 @@
                         image handling and how to use IIIF to solve them. Somewhat deprecated with advancements in CSS
                         since then, but it was my first tech-centered essay, so I have fond memories.</dd>
 
-
                     <dt>FOSS: What and Why</dt>
                     <dd><em>Job Talk.</em>2020. Overview of what FOSS means, what open source is, and their value, both
                         ethically and practically</dd>
 
-
                     <dt>Digitial Initiatives Career Talk</dt>
                     <dd><em>Job Talk.</em>2021. Presented to a number of college classes, a summary of what we do and
                         how we do it.</dd>
-
 
                     <dt>From Socrates to Stack Exchange</dt>
                     <dd><em>Job Talk.</em>2022. Covering the general applications and use cases of various languages,
@@ -310,8 +310,7 @@
             </section>
         </article>
     </main>
-    <section
-        class="contact-section">
+    <section class="contact-section">
         <article id="contact">
             <form action="https://formsubmit.co/4c5fb5bc125c9ac8405bf2fbe9a6a4a2" method="POST">
                 <div class="left"><input name="name" placeholder="Enter name..." required="" type="name"
@@ -321,7 +320,7 @@
                         rows="10" class="message"></textarea><button class="submit">Say hi!</button></div>
             </form>
         </article>
-        <a href="#top"><i></i>
+        <a href="#top" id="top-btn"><i></i>
             <p>back to top</p>
         </a>
 
